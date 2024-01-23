@@ -39,7 +39,7 @@ class ImageRemoveBackgroundNode:
         if self._CACHED_SESSION[0] != model:
             self._CACHED_SESSION[0] = model
             self._CACHED_SESSION[1] = rembg.new_session(model)
-        session = self._CACHED_SESSION[1]
+        rembg_session = self._CACHED_SESSION[1]
         rembg_output = rembg.remove(
             image.cpu().numpy(),
             only_mask=only_mask,
